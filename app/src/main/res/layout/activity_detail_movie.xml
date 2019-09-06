@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".ui.detail.movie.DetailMovieActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="@color/mainColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/movie_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="0dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="128dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/poster_spiderman"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/tvMovieName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_photo" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/material_icon_button"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Watch Now"
+                    android:backgroundTint="#FDD407"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieName" />
+
+                <RatingBar
+                    android:id="@+id/ratings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginEnd="-32dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:scaleX="0.5"
+
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+
+                    android:theme="@style/CustomRatingBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieName" />
+
+                <TextView
+                    android:id="@+id/tvMovieDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:text="@string/description_movie"
+                    android:textColor="@color/secondarycolor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ratings" />
+
+                <TextView
+                    android:id="@+id/tvMovieGenre"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/genre_movie"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondarycolor"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieDescription" />
+
+
+
+                <TextView
+                    android:id="@+id/tvMovieRelease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingStart="32dp"
+                    android:text="@string/release_movie"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondarycolor"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieGenre" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:text="More Popular Movie"
+                    android:textAlignment="center"
+                    android:textColor="#FDD407"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieRelease" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <ScrollView
+                android:id="@+id/scroll_view_detail"
+                android:focusableInTouchMode="false"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_marginTop="-10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_movie_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/items_movie_popular"
+                        >
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
